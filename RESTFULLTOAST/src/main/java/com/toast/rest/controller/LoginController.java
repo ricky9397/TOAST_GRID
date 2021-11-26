@@ -5,10 +5,10 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.toast.rest.service.LoginService;
+import com.toast.rest.vo.EmployeeVO;
 
 @RestController
 public class LoginController {
@@ -16,9 +16,17 @@ public class LoginController {
 	@Resource
 	private LoginService loginService;
 	
+	/**
+	 * 로그인
+	 * @param employeevo
+	 * @param session
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping(value = "login.do", method = RequestMethod.POST)
-	public int Login(@RequestParam("id") String id, @RequestParam("pw") String pw, HttpSession session) throws Exception {
-		return loginService.selectLogin(id, pw, session);
+	public int Login(EmployeeVO employeevo, HttpSession session) throws Exception {
+		int result = loginService.selectLogin(employeevo, session);
+		return result;
 	}
 	
 }
