@@ -2,7 +2,7 @@ package com.toast.rest.dao;
 
 import javax.annotation.Resource;
 
-import org.mybatis.spring.SqlSessionTemplate;
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.toast.rest.vo.EmployeeVO;
@@ -11,7 +11,7 @@ import com.toast.rest.vo.EmployeeVO;
 public class LoginDAO {
 	
 	@Resource
-	private SqlSessionTemplate sqlSession;
+	private SqlSession sqlSession;
 	
 	public EmployeeVO selectLogin(EmployeeVO employeevo) {
 		return sqlSession.selectOne("login.selectLogin", employeevo);

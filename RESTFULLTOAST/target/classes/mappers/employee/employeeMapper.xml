@@ -5,11 +5,11 @@
 	
 <mapper namespace="login">
 	
-	<select id="selectLogin" resultType="employeeVO">
-		SELECT ER_ID
+	<select id="selectLogin" resultType="employeeVO" parameterType="employeeVO">
+		SELECT ID
 		  FROM ER_LOGIN
-		 WHERE ER_ID 	= #{id} 
-		   AND ER_PW 	= #{pw}
+		 WHERE ID 	= #{id}
+		   AND PW 	= #{pw}
 	</select>
 
 

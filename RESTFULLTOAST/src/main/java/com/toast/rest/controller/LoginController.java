@@ -25,7 +25,9 @@ public class LoginController {
 	 */
 	@RequestMapping(value = "login.do", method = RequestMethod.POST)
 	public int Login(EmployeeVO employeevo, HttpSession session) throws Exception {
+		
 		int result = loginService.selectLogin(employeevo, session);
+		
 		return result;
 	}
 	

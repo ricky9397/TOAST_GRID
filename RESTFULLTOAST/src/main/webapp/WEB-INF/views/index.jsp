@@ -50,10 +50,11 @@
 			type : 'POST',
 			url : 'login.do',
 			data : formData,
+			dataType : 'JSON',
 			success : function(data){
 				console.log(data);
 				if(data == 1){
-					//window.location.href = "";
+					window.location.href = "";
 					alert('성공');
 				} else {
 					alert('아이디 또는 비번이 다릅니다. 다시확인해주세요.')
