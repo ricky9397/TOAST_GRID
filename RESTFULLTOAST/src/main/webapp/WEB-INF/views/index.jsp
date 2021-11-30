@@ -43,9 +43,7 @@
 <script type="text/javascript">
 	$('#submitBtn').click(function(e){
 		e.preventDefault();
-		
 		var formData = $("#formData").serialize();
-		
 		$.ajax({
 			type : 'POST',
 			url : 'login.do',
@@ -63,10 +61,5 @@
 		});
 	});
 </script>
-
-
-
-
-
 </body>
 </html>
